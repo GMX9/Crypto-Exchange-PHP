@@ -1,0 +1,54 @@
+#wrapper
+{
+	margin-left:40%;
+	margin-top:70px;
+	width:60px;
+	background-color:#E6E6E6;
+	height:30px;
+	border-radius:50px;
+	box-shadow:0px 0px 3px 0px black;
+}
+#wrapper #onlabel
+{
+	float:left;
+	display:none;
+	font-size:18px;
+	color:white;
+	font-family:helvetica;
+	margin:0px;
+	margin-top:7px;
+	margin-left:10px;
+}
+#wrapper #offlabel
+{
+	float:left;
+	display:none;
+	font-size:18px;
+	color:white;
+	font-family:helvetica;
+	margin:0px;
+	margin-top:7px;
+	margin-left:55px;
+}
+#inner
+{
+	width:30px;
+	background-color:white;
+	height:30px;
+	margin-top:-2px;
+	margin-left:-7px;
+	border-radius:50%;
+}
+
+#checkbox_div
+{
+	margin-top:50px;
+	margin-left:40%;
+}
+input[type="checkbox"]
+{
+	width:20px;
+	height:20px;
+}
+
+
