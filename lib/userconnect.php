@@ -15,7 +15,7 @@ public static function login()
              if(empty($username)){
  echo'
        	<div class="warning">
-          <p>Por favor insira um e-mail.</p>
+          <p>Please insert an e-mail.</p>
     	</div>
        ';
       echo'<META HTTP-EQUIV="refresh" CONTENT="3">';
@@ -28,7 +28,7 @@ public static function login()
    
  echo'
        	<div class="warning">
-          <p>Por favor insira uma password.</p>
+          <p>Please insert a password.</p>
     	</div>
        ';
 
@@ -62,7 +62,7 @@ echo'<meta http-equiv="refresh" content="0">';
 
         echo'
        	<div class="warning">
-          <p>O e-mail ou password estão incorrectos. <a href="">Contacte</a> a SPG.</p>
+          <p>Email or password incorrect. <a href="">Contact</a> support.</p>
     	</div>
        ';
       echo'<META HTTP-EQUIV="refresh" CONTENT="2">';
@@ -96,7 +96,7 @@ public static function loginadmin()
    
  echo'
        	<div class="warning">
-          <p>Por favor insira uma password.</p>
+          <p>Please insert a password.</p>
     	</div>
        ';
 
@@ -131,7 +131,7 @@ echo'<meta http-equiv="refresh" content="0">';
 
         echo'
        	<div class="warning">
-          <p>O e-mail ou password estão incorrectos.</p>
+          <p>Email or password incorrect.</p>
     	</div>
        ';
       echo'<META HTTP-EQUIV="refresh" CONTENT="2">';
@@ -180,7 +180,7 @@ public static function register()
   if($row_name_user){
    echo"
    <script>
-   alert('O nome de utilizador já esta em uso.');
+   alert('The username is already in use.');
    </script>
    ";
    
@@ -188,7 +188,7 @@ public static function register()
   }else if($row_name_email){
    echo"
    <script>
-   alert('O email já esta em uso.');
+   alert('The email is already in use.');
    </script>
    ";
 
@@ -203,7 +203,7 @@ public static function register()
   $save->close();
 
 
-  echo"<script>alert('A sua conta foi criada com successo.');</script>";
+  echo"<script>alert('Your account was successfully created.');</script>";
   $_SESSION['username'] = $email;
   ?>
 <script type="text/javascript">
