@@ -13,8 +13,8 @@
                         <div class="main-menu">
                             <ul>
                                 <li><a href="/">Inicio</a></li>
-                                <li><a href="/sobre">Sobre</a></li>
-                                <li><a href="/ajuda">Ajuda</a></li>
+                                <li><a href="/about">Sobre</a></li>
+                                <li><a href="/help">Ajuda</a></li>
 
                                 <?php if(isset($_SESSION['username'])){ echo ' <li><a href="/conta">Minha conta</a></li>'; } ?>
                             </ul>
