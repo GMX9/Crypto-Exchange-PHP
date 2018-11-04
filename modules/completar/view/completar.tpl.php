@@ -91,8 +91,9 @@ if($check->num_rows){
 ########################################################
 # VERIFICAR TRANSAÇÃO
 ########################################################
+require_once("configs/global.php");   
 
-$data = json_decode(file_get_contents('https://changenow.io/api/v1/transactions/'.$tid.'/608669356fd610a60e6e146283b923b202986fbc8d60163dcf25cd82b50adc04'), true);
+$data = json_decode(file_get_contents('https://changenow.io/api/v1/transactions/'.$tid.$config['changenow']['api']), true);
 //print_r($data);
 //echo $data["status"];
 
