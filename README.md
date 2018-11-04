@@ -5,6 +5,8 @@ This script is completly tested and exchanges the coins without any trouble usin
 
 Changenow.io is the best partner to have a as an exchange api provider since it pays you 90% of every transaction fee.
 
+Our website : https://cryptoexchange-software.us/
+
 ### Features
  - Add new coins
  - Get money from setting changenow.io API and get 90% transaction fees.
