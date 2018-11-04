@@ -23,7 +23,7 @@ class exchange{
                 if(isset($_SESSION['en'])){
                     
                 }else{
-                  echo'<script>alert("Ainda tens uma exchange a decorrer, terás de a finalizar primeiro.");</script>';
+                  echo'<script>alert("You still have an exchange on going, finish it first.");</script>';
                 }
                 
                 // Refresh page
