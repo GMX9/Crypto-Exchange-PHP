@@ -1,13 +1,12 @@
-
         <div class="banner">
             <div class="container">
                 <div class="row" style="margin-top:-65px;">
                     <div class="col-xl-7">
                         <div class="banner-content">
-                            <h1>Troque
-                            Criptomoedas<br/>
-                            <span>Aos melhores rates</span></h1>
-                            <p>Transfira de uma carteira para outra. Tão simples assim.</p>
+                            <h1>Exchange
+                            Cryptocurrency<br/>
+                            <span>At best rates</span></h1>
+                            <p>Transfer from a wallet to another. That simple.</p>
                             <form method="POST" action="">
                             
                             <div class="exchange-button">
@@ -41,9 +40,10 @@
                         </div>
                             
                         <div class="exchange-now">
-                            <button name="exchange" class="exchange-now-button">Trocar Agora</button> 
+                            <button name="submitx" class="exchange-now-button">Exchange</button> 
                         </div>
                       </form>
+
 <?php 
 if(isset($_POST['exchange'])){  
     
@@ -97,7 +97,7 @@ if(isset($_POST['exchange'])){
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="area-title">
-                            <h2>Os nossos serviços</h2>
+                            <h2>Our services</h2>
                         </div>
                     </div>
                 </div>
@@ -111,8 +111,8 @@ if(isset($_POST['exchange'])){
                                 <img src="../templates/exchange/assets/img/icon-9.png" alt="">
                             </div>
                             <div class="part-text">
-                                <h3>Simples</h3>
-                                <p>Insira o montante e o endereço. Transfira as suas moedas e deixe a magia acontecer.</p>
+                                <h3>Simple</h3>
+                                <p>Insert the amount and address. Transfer your coins and let the magic happen.</p>
                             </div>
                         </div>
                     </div>
@@ -124,8 +124,8 @@ if(isset($_POST['exchange'])){
                                 <img src="../templates/exchange/assets/img/icon-10.png" alt="">
                             </div>
                             <div class="part-text">
-                                <h3>Rápido</h3>
-                                <p>Após inserido o endereço e montante as suas moedas serão transferidas super rápido.</p>
+                                <h3>Fast</h3>
+                                <p>After the first step is made your coins will be exchange super fast.</p>
                             </div>
                         </div>
                     </div>
@@ -137,8 +137,8 @@ if(isset($_POST['exchange'])){
                                 <img src="../templates/exchange/assets/img/icon-11.png" alt="">
                             </div>
                             <div class="part-text">
-                                <h3>Confiança</h3>
-                                <p>O processo de exchange é automatizado e não requer qualquer interferência humana para o mesmo.</p>
+                                <h3>Trust</h3>
+                                <p>The exchange proccess is automaticly and does not require any human interaction.</p>
                             </div>
                         </div>
                     </div>
@@ -152,8 +152,8 @@ if(isset($_POST['exchange'])){
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="area-title">
-                            <h2>Como funciona?</h2>
-                            <p>Utilizamos uma tecnologia que nos permite fazer a exchange das suas moedas ao rate atual do mercado funcionando com diferentes API's de mercados diferentes.</p>
+                            <h2>How it works?</h2>
+                            <p>We use a technology which allows us to search the best market rate and exchange your coins trought different API's.</p>
                         </div>
                     </div>
                 </div>
@@ -165,8 +165,8 @@ if(isset($_POST['exchange'])){
                                 <i class="flaticon-notebook"></i>
                             </div>
                             <div class="content">
-                                <h4>Adicione o seu endereço</h4>
-                                <p>Insira o seu endereço de destino para a moeda desejada a receber</p>
+                                <h4>Enter your address</h4>
+                                <p>Insert your final address for the coin you wish to receive</p>
                             </div>
                         </div>
                     </div>
@@ -176,8 +176,8 @@ if(isset($_POST['exchange'])){
                                 <i class="flaticon-wallet"></i>
                             </div>
                             <div class="content">
-                                <h4>Abrir depósito</h4>
-                                <p>Assim que tiver completado o primeiro passo será gerado uma box de pagamento para completar a exchange.</p>
+                                <h4>Open a deposit</h4>
+                                <p>Once it is completed you will need to send the first coins and the exchange will automaticly begins.</p>
                             </div>
                         </div>
                     </div>
@@ -187,8 +187,8 @@ if(isset($_POST['exchange'])){
                                 <i class="flaticon-withdrawing-money-from-atm"></i>
                             </div>
                             <div class="content">
-                                <h4>Retirada Automática</h4>
-                                <p>Assim que processado as suas moedas serão enviadas autmáticamente para o endereço de destino.</p>
+                                <h4>Withdrawal Automaticly</h4>
+                                <p>Your exchange is sent directly to your desired wallet once the exchange occurs.</p>
                             </div>
                         </div>
                     </div>
@@ -198,8 +198,8 @@ if(isset($_POST['exchange'])){
                                 <i class="flaticon-bars"></i>
                             </div>
                             <div class="content">
-                                <h4>Usufruia</h4>
-                                <p>Após concluido poderá fazer mais exchanges na nossa plataforma.</p>
+                                <h4>Enjoy</h4>
+                                <p>After concluded you can make more exchanges trough our plataform.</p>
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,7 @@ if(isset($_POST['exchange'])){
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="area-title">
-                            <h2>Junta-te a nós gratuitamente !</h2>
+                            <h2>Join us for free !</h2>
                         </div>
                     </div>
                 </div>
@@ -225,21 +225,21 @@ if(isset($_POST['exchange'])){
                        <div class="form">
                             <form method="POST" class="signup-form">
                                 <div class="name-area">
-                                    <p>Insere o teu nome de utilizador</p>
-                                    <input type="text" name="username" placeholder="Escreve aqui..." required="">
+                                    <p>Your name</p>
+                                    <input type="text" name="username" placeholder="Type here..." required="">
                                     <i class="icofont-ui-user"></i>
                                 </div>
                                 <div class="mail-area">
-                                    <p>Insere o teu email</p>
-                                    <input type="email" name="email" placeholder="Escreve aqui..." required="">
+                                    <p>Your email</p>
+                                    <input type="email" name="email" placeholder="Type here..." required="">
                                     <i class="icofont-email"></i>
                                 </div>
                                 <div class="mail-area">
-                                    <p>Insere a tua password</p>
-                                    <input type="password" name="password" placeholder="Escreve aqui..." required="">
+                                    <p>Password</p>
+                                    <input type="password" name="password" placeholder="Type here..." required="">
                                     <i class="icofont-email"></i>
                                 </div>
-                                <button name="submit" class="submit-button">entrar</button>
+                                <button name="submit" class="submit-button">join now</button>
                             </form>
                             <?php 
                                     if(isset($_POST['submit'])){
@@ -263,7 +263,7 @@ if(isset($_POST['exchange'])){
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="area-title">
-                            <h2 class="plus-margin">Ultimas trocas</h2>
+                            <h2 class="plus-margin">Last Exchanges</h2>
                         </div>
                     </div>
                 </div>
@@ -286,18 +286,18 @@ if(isset($_POST['exchange'])){
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                           <th scope="col">Data</th>
-                                           <th scope="col">Moeda</th>
-                                           <th scope="col">Endereço</th>
-                                           <th scope="col">Montante</th>
-                                           <th scope="col">Hora</th>
-                                           <th scope="col">Pagamento</th>
+                                           <th scope="col">Date</th>
+                                           <th scope="col">Coin</th>
+                                           <th scope="col">Hash</th>
+                                           <th scope="col">Amount</th>
+                                           <th scope="col">Hour</th>
+                                           <th scope="col">Payment</th>
                                            <th scope="col">Conf.</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                           <th scope="row"><i class="fas fa-calendar-alt"></i> 4 de Outubro 2018</th>
+                                           <th scope="row"><i class="fas fa-calendar-alt"></i> 4 de October 2018</th>
                                            <td><i class="fab fa-bitcoin"></i> Bitcoin</td>
                                            <td>1Puh8q2SM3N92FwTHXNZq4LwkRpPQ61jy</td>
                                            <td><i class="far fa-clock"></i> 0.84634 <span>BTC</span></td>
