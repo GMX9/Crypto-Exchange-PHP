@@ -24,10 +24,10 @@
                         <div class="form-bar">
                             <h3>What goes in your mind <br/>Tell us here</h3>
                             <form>
-                                <input type="text" placeholder="O seu nome">
-                                <input type="email" placeholder="Endereço de email">
-                                <textarea placeholder="A sua mensagem"></textarea>
-                                <button>enviar</button>
+                                <input type="text" placeholder="Your name">
+                                <input type="email" placeholder="Your email">
+                                <textarea placeholder="Your message"></textarea>
+                                <button>send</button>
                             </form>
                         </div>
                     </div>
