@@ -12,11 +12,11 @@
                     <div class="col-xl-7 d-flex align-items-center col-lg-8 col-md-12">
                         <div class="main-menu">
                             <ul>
-                                <li><a href="/">Inicio</a></li>
-                                <li><a href="/about">Sobre</a></li>
-                                <li><a href="/help">Ajuda</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/help">Help</a></li>
 
-                                <?php if(isset($_SESSION['username'])){ echo ' <li><a href="/conta">Minha conta</a></li>'; } ?>
+                                <?php if(isset($_SESSION['username'])){ echo ' <li><a href="/conta">My account</a></li>'; } ?>
                             </ul>
                         </div>
                     </div>
@@ -25,11 +25,11 @@
                         <div class="sign-in">
                             <?php if(isset($_SESSION['username'])){ ?>
                             
-                            <a href="/logout">sair</a>
+                            <a href="/logout">logout</a>
 
                             <?php }else{ ?>    
                                 
-                            <a href="/login">entrar</a>
+                            <a href="/login">log in</a>
                             
                             <?php } ?>
                         </div>
