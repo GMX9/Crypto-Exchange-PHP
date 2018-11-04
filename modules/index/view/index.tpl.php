@@ -18,9 +18,12 @@
                             <div class="exchange-button">
                                 <input type="text" name="montante" placeholder="0">
                                 <select name="from">
-                                    <option value="btc">BTC</option>
-                                    <option value="eth">ETH</option>
-                                    <option value="ltc">LTC</option>
+                                    <?php
+                                    $lines = file('configs/coins.txt');
+                                    foreach($lines as $line) {
+                                        echo '<option value="'.$line.'">'.$line.'</option>';
+                                    }
+                                    ?>
                                 </select>
                                 <div class="icon">
                                     <i class="fas fa-angle-down"></i>
@@ -29,9 +32,12 @@
                             <div class="exchange-button">
                                 <input type="text" style="border:none;" disabled placeholder="Para">
                                 <select name="to">
-                                    <option value="eth">ETH</option>
-                                    <option value="btc">BTC</option>
-                                    <option value="ltc">LTC</option>
+                                    <?php
+                                    $lines = file('configs/coins.txt');
+                                    foreach($lines as $line) {
+                                        echo '<option value="'.$line.'">'.$line.'</option>';
+                                    }
+                                    ?>
                                 </select>
                                 <div class="icon">
                                     <i class="fas fa-angle-down"></i>
