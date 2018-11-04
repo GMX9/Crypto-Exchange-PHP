@@ -283,29 +283,67 @@ if(isset($_POST['exchange'])){
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="chart">
-                                <table class="table table-striped">
+                                 <table class="table">
                                     <thead>
                                         <tr>
-                                           <th scope="col">Date</th>
-                                           <th scope="col">Coin</th>
-                                           <th scope="col">Hash</th>
-                                           <th scope="col">Amount</th>
-                                           <th scope="col">Hour</th>
-                                           <th scope="col">Payment</th>
-                                           <th scope="col">Conf.</th>
+                                            <th scope="col">Pair</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col">Hash</th>
+                                            <th scope="col">State</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                           <th scope="row"><i class="fas fa-calendar-alt"></i> 4 de October 2018</th>
-                                           <td><i class="fab fa-bitcoin"></i> Bitcoin</td>
-                                           <td>1Puh8q2SM3N92FwTHXNZq4LwkRpPQ61jy</td>
-                                           <td><i class="far fa-clock"></i> 0.84634 <span>BTC</span></td>
-                                           <td>22:09:58</td>
-                                           <td>1.84634 <span>BTC</span></td>
-                                           <td>1</td>
-                                        </tr>
-                                       
+                                    <?php 
+                                    
+                                    global $connect;
+                                    $user = $_SESSION['username'];
+                                    $select = $connect->query("SELECT * FROM transactions ORDER by id DESC");
+                                    while($fetch = $select->fetch_array(MYSQLI_ASSOC)){
+                                        
+                                        if(isset($_SESSION['en'])){
+                                            $estado_texto_a = "Waiting";
+                                            $estado_texto_b = "Confirmed";
+
+                                        }else{
+                                            $estado_texto_a = "Waiting";
+                                            $estado_texto_b = "Confirmed";
+                                        }
+                                        
+                                        $estado_cor_a = "orange";
+                                        $estado_cor_b = "green";
+                                        
+                                        $pair = str_replace("_","->",$fetch['pair']);
+                                        $currency = $arr = explode("->", $pair, 2);
+                                        $currency = $arr[0];
+                                        $currency = strtoupper($currency);
+                                        $from = $arr[0];
+                                        $to = $arr[1]; 
+                                        
+                                        if($fetch['verified'] == 0){
+                                            $estado = $estado_texto_a;
+                                            $cor = $estado_cor_a;
+                                        }else{
+                                            $estado = $estado_texto_b;
+                                            $cor = $estado_cor_b;
+                                            
+                                        }
+                                        
+                                        echo'
+                                        <th scope="row">'.strtoupper($arr[0]).' Para '.strtoupper($arr[1]).'</th>
+                                        <th>'.$fetch['date'].'</th>
+                                        <th>'.$fetch['sendamount'].' '.strtoupper($arr[0]).'</th>
+                                        <th scope="row">'.$fetch['hash'].'</th>
+                                        <th style="color:'.$cor.';">'.$estado.'</th>
+
+
+                                        
+                                        
+                                        
+                                        ';
+                                    }
+                                    ?>
+                                        
                                     </tbody>
                                 </table>
                             </div>
