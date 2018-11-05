@@ -303,7 +303,6 @@ if(isset($_POST['exchange'])){
                                     <?php 
                                     
                                     global $connect;
-                                    $user = $_SESSION['username'];
                                     $select = $connect->query("SELECT * FROM transactions ORDER by id DESC");
                                     while($fetch = $select->fetch_array(MYSQLI_ASSOC)){
                                         
