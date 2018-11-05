@@ -19,7 +19,7 @@ include("configs/global.php");
                                 <li><a href="/about">About</a></li>
                                 <li><a href="/help">Help</a></li>
 
-                                <?php if(isset($_SESSION['username'])){ echo ' <li><a href="/conta">My account</a></li>'; } ?>
+                                <?php if(isset($_SESSION['username'])){ echo ' <li><a href="/account">My account</a></li>'; } ?>
                             </ul>
                         </div>
                     </div>
