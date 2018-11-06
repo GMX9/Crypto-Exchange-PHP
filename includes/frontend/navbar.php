@@ -6,7 +6,7 @@ include("configs/global.php");
                 <div class="row d-flex">
                     <div class="col-xl-3 col-lg-4 col-md-12">
                         <div class="logo">
-                            <a href="/"><?php echo $config['global']['websitename']; ?>Exchange</a>
+                            <a href="/"><?php echo $config['global']['websitename']; ?></a>
                         </div>
                         <div class="menu-button d-block d-xl-none d-lg-block d-md-block d-sm-block">
                             <i class="icofont-navigation-menu"></i>
