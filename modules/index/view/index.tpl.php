@@ -46,7 +46,7 @@
                         </div>
                             
                         <div class="exchange-now">
-                            <button name="submitx" class="exchange-now-button">Exchange</button> 
+                            <button name="exchange" class="exchange-now-button">Exchange</button> 
                         </div>
                       </form>
 
