@@ -1,5 +1,43 @@
 <?php 
-class exchange{
+class user{
+    
+    private $user;
+    private $connect;
+    
+    public function __construct(){
+        global $connect;
+        $this->user = isset($_SESSION['username']) ? $_SESSION['username'] : "";
+        $this->connect = $connect;
+    }
+    
+    public function isLoggedin(){
+        
+        if(!empty($this->user)){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    
+    public function getName(){
+        
+        $user = $this->user;
+        $get = $this->connect->query("SELECT * FROM users WHERE email = '$user'");
+        $fetch = $get->fetch_array(MYSQLI_ASSOC);
+        
+        $name = $fetch['username'];
+        
+        echo $name;
+        
+    }
+    
+  
+   
+}
+
+
+class exchange extends user{
     
     private $user;
     private $connect;
@@ -10,7 +48,7 @@ class exchange{
              $this->user = $_SESSION['username']; 
         }
     }
-
+    
 
     public function switchCoins($amount,$address,$from,$to){ // Exchange coins
        
@@ -55,6 +93,7 @@ class exchange{
     
 }
 
+$user = new user;
 $exchange = new exchange;
 
 
