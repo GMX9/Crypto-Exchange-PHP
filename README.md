@@ -34,6 +34,11 @@ Our website : https://cryptoexchange-software.us/
  - Contribute to the codebase
  - Promote 
  
+ ### Upcomming features
+ 
+ - Custom Backoffice for fully customizing the website
+ - Gradual Programming template upgrade (New coding parameters for easy integration)
+ 
  ### No resell rights
  
  You do not have the right's to resell this or claim as yours, all rights are exclusive to me, you can reuse it and reedit but not resell !
