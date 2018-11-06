@@ -300,55 +300,7 @@ if(isset($_POST['exchange'])){
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
-                                    
-                                    global $connect;
-                                    $select = $connect->query("SELECT * FROM transactions ORDER by id DESC");
-                                    while($fetch = $select->fetch_array(MYSQLI_ASSOC)){
-                                        
-                                        if(isset($_SESSION['en'])){
-                                            $estado_texto_a = "Waiting";
-                                            $estado_texto_b = "Confirmed";
-
-                                        }else{
-                                            $estado_texto_a = "Waiting";
-                                            $estado_texto_b = "Confirmed";
-                                        }
-                                        
-                                        $estado_cor_a = "orange";
-                                        $estado_cor_b = "green";
-                                        
-                                        $pair = str_replace("_","->",$fetch['pair']);
-                                        $currency = $arr = explode("->", $pair, 2);
-                                        $currency = $arr[0];
-                                        $currency = strtoupper($currency);
-                                        $from = $arr[0];
-                                        $to = $arr[1]; 
-                                        
-                                        if($fetch['verified'] == 0){
-                                            $estado = $estado_texto_a;
-                                            $cor = $estado_cor_a;
-                                        }else{
-                                            $estado = $estado_texto_b;
-                                            $cor = $estado_cor_b;
-                                            
-                                        }
-                                        
-                                        echo'
-                                        <th scope="row">'.strtoupper($arr[0]).' Para '.strtoupper($arr[1]).'</th>
-                                        <th>'.$fetch['date'].'</th>
-                                        <th>'.$fetch['sendamount'].' '.strtoupper($arr[0]).'</th>
-                                        <th scope="row">'.$fetch['hash'].'</th>
-                                        <th style="color:'.$cor.';">'.$estado.'</th>
-
-
-                                        
-                                        
-                                        
-                                        ';
-                                    }
-                                    ?>
-                                        
+                                    <?php exchange::allTransactions(); ?>
                                     </tbody>
                                 </table>
                             </div>
