@@ -30,26 +30,27 @@ public function pageIndex($param){
     
     if(isset($_GET['page']) && $conta == 1){
         
-        global $connect;
-        $name = htmlentities($connect->real_escape_string($_GET[$param]));
-        if(scandir("modules/$name/")){
-            if(file_exists("modules/$name/controller/$name.php"))
-            {		
-             require_once("modules/$name/controller/$name.php");
-             $module->index();
-            }else{
-             require_once("modules/index/controller/index.php");
-             $module->index();
+            $name = $_GET[$param];
+            $dirs = scandir("modules/");
+            $found = false;
+            foreach ($dirs as $dir){
+                if($name == $dir && is_dir("modules/$dir")){
+                    $found = true;
+                    break;
+                }
             }
-        }else{
-            require_once("modules/index/controller/index.php");
-            $module->index();
-        }
+            if($found && file_exists("modules/$name/controller/$name.php")){
+                require_once("modules/$name/controller/$name.php");
+                $module->index();
+            }else{
+                require_once("modules/index/controller/index.php");
+                $module->index();
+            } 
         	
     }else{
 
-	require_once('modules/index/controller/index.php');
-	$module->index();
+	    require_once('modules/index/controller/index.php');
+	    $module->index();
 
     }
 
