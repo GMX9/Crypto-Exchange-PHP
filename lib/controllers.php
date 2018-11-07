@@ -30,7 +30,7 @@ public function pageIndex($param){
     
     if(isset($_GET['page']) && $conta == 1){
         
-        	$name = $_GET[$param];
+        	$name = htmlentities($connect->real_escape_string($_GET[$param]));
         	if(file_exists("modules/$name/controller/$name.php"))
         	{		
         		require_once("modules/$name/controller/$name.php");
