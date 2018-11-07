@@ -30,15 +30,21 @@ public function pageIndex($param){
     
     if(isset($_GET['page']) && $conta == 1){
         
-        	$name = htmlentities($connect->real_escape_string($_GET[$param]));
-        	if(file_exists("modules/$name/controller/$name.php"))
-        	{		
-        		require_once("modules/$name/controller/$name.php");
-        		$module->index();
-        	}else{
-        		require_once("modules/index/controller/index.php");
-        		$module->index();
-        	}
+        global $connect;
+        $name = htmlentities($connect->real_escape_string($_GET[$param]));
+        if(scandir("modules/$name/")){
+            if(file_exists("modules/$name/controller/$name.php"))
+            {		
+             require_once("modules/$name/controller/$name.php");
+             $module->index();
+            }else{
+             require_once("modules/index/controller/index.php");
+             $module->index();
+            }
+        }else{
+            require_once("modules/index/controller/index.php");
+            $module->index();
+        }
         	
     }else{
 
