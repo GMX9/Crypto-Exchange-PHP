@@ -1,8 +1,8 @@
    <div class="page-title-area">
             <div class="container">
                 <div class="page-title">
-                    <h1 class="plus-margin">Registar</h1>
-                    <h2>Inicio  |  Registar</h2>
+                    <h1 class="plus-margin">Register</h1>
+                    <h2>Home  |  Register</h2>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-xl-10">
                                     <div class="register-title">
-                                        <h2>Registar Agora</h2>
+                                        <h2>Register Now</h2>
                                     </div>
                                 </div>
                             </div>
@@ -25,23 +25,23 @@
                                 <div class="col-xl-10">
                                     <form method="POST" action="">
                                         <div class="name">
-                                            <h4>Insira um nome de utilizador</h4>
-                                            <input type="text" name="username" placeholder="Escreve aqui...">
+                                            <h4>Username</h4>
+                                            <input type="text" name="username" placeholder="Type here...">
                                             <i class="fas fa-user"></i>
                                         </div>
                                         <div class="mail">
-                                            <h4>Insira o seu email</h4>
-                                            <input type="email" name="email" placeholder="Escreve aqui...">
+                                            <h4>Email</h4>
+                                            <input type="email" name="email" placeholder="Type here...">
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                         <div class="password">
-                                            <h4>Insira a seu password</h4>
-                                            <input type="password" name="password" placeholder="Escreve aqui...">
+                                            <h4>Password</h4>
+                                            <input type="password" name="password" placeholder="Type here...">
                                             <i class="fas fa-key"></i>
                                         </div>
                                         <div class="two-buttons">
-                                            <button name="submit">registar agora</button>
-                                            <button name="entrar">entrar agora</button>
+                                            <button name="submit">register</button>
+                                            <button name="entrar">log in</button>
                                         </div>
                                     </form>
                                     <?php 

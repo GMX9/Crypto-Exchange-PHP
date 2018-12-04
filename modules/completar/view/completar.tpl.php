@@ -38,6 +38,8 @@ $currency = strtoupper($currency);
 
 $from = $arr[0];
 $to = $arr[1];
+    
+require_once("configs/global.php");   
 
 
 $client = new GuzzleHttp\Client();
@@ -49,7 +51,7 @@ $data   = [
     "refundAddress" => "1GRXa73viip2EccKocY74MHh2R5mhbvATB"
 ];
 
-$result = $client->post('https://changenow.io/api/v1/transactions/608669356fd610a60e6e146283b923b202986fbc8d60163dcf25cd82b50adc04', ['json' => $data]);
+$result = $client->post('https://changenow.io/api/v1/transactions/'.$tid.$config['changenow']['api'], ['json' => $data]);
 
 
 /*print "<pre>";
@@ -138,8 +140,8 @@ if($verified == "finished"){
         <div class="page-title-area">
             <div class="container">
                 <div class="page-title">
-                    <h1>Completar</h1>
-                    <h2>Inicio  |  Completar</h2>
+                    <h1>Complete</h1>
+                    <h2>Home  |  Complete</h2>
                 </div>
             </div>
         </div>
@@ -155,7 +157,7 @@ if($verified == "finished"){
                                 <a class="nav-link active" data-toggle="tab" href="confirmation.html#one" role="tab" aria-selected="true">
                                     <div class="single-filter">
                                         <i class="flaticon-change"></i>
-                                        <h4>carteira</h4>
+                                        <h4>Wallet</h4>
                                     </div>
                                 </a>
                             </li>
@@ -163,7 +165,7 @@ if($verified == "finished"){
                                 <a class="nav-link" data-toggle="tab" href="confirmation.html#one" role="tab" aria-selected="false">
                                     <div class="single-filter">
                                         <i class="flaticon-money"></i>
-                                        <h4>Montante</h4>
+                                        <h4>Amount</h4>
                                     </div>
                                 </a>
                             </li>
@@ -171,7 +173,7 @@ if($verified == "finished"){
                                 <a class="nav-link" data-toggle="tab" href="confirmation.html#one" role="tab" aria-selected="false">  
                                     <div class="single-filter">
                                         <i class="flaticon-paper-plane"></i>
-                                        <h4>Enviar para</h4>
+                                        <h4>Send to</h4>
                                     </div>
                                 </a>
                             </li>
@@ -180,7 +182,7 @@ if($verified == "finished"){
                                 <a class="nav-link" data-toggle="tab" href="confirmation.html#one" role="tab" aria-selected="false">  
                                     <div class="single-filter">
                                         <i class="flaticon-verified"></i>
-                                        <h4>Confirmação</h4>
+                                        <h4>Confirm</h4>
                                     </div>
                                 </a>
                             </li>
@@ -189,7 +191,7 @@ if($verified == "finished"){
                                 <a class="nav-link" data-toggle="tab" href="confirmation.html#one" role="tab" aria-selected="false">  
                                     <div class="single-filter">
                                         <i class="flaticon-export"></i>
-                                        <h4>Envio</h4>
+                                        <h4>Sent</h4>
                                     </div>
                                 </a>
                             </li>
@@ -198,7 +200,7 @@ if($verified == "finished"){
                                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="confirmation.html#six" role="tab" aria-selected="false">  
                                     <div class="single-filter">
                                         <i class="flaticon-bitcoin-2"></i>
-                                        <h4>Troca</h4>
+                                        <h4>Exchange</h4>
                                     </div>
                                 </a>
                             </li>
@@ -222,13 +224,13 @@ if($verified == "finished"){
                                         </div>
                                         <div class="transaction-id">
                                             <ul>
-                                                <li>Montante em <?php echo strtoupper($to); ?> esperado</li>
+                                                <li>Amount expected in <?php echo strtoupper($to); ?></li>
                                                 <li><?php echo $montante_esperado; echo " ".strtoupper($to); ?></li>
                                             </ul>
                                         </div>
                                          <div class="part-text">
-                                            <h2>Envie <?php echo $amount_to_send;?> <?php echo $currency; ?> para o endereço abaixo.</h2>
-                                            <h3>O montante total deverá ser enviado todo numa transação</h3>
+                                            <h2>Send <?php echo $amount_to_send;?> <?php echo $currency; ?> to the address below.</h2>
+                                            <h3>The total amount should be sent in 1 transaction only</h3>
                                         </div>
 
                                         <div class="part-input">
@@ -239,7 +241,7 @@ if($verified == "finished"){
                                         </div>
 
                                         <div class="part-link">
-                                            <a href="/ajuda">Esta tendo problemas?</a>
+                                            <a href="/help">Having problems?</a>
                                         </div>
                                     </div>
                                 </div>

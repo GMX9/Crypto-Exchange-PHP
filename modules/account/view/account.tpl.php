@@ -2,8 +2,8 @@
         <div class="page-title-area">
             <div class="container">
                 <div class="page-title">
-                    <h1>A minha conta</h1>
-                    <h2>Inicio  |  Conta</h2>
+                    <h1>My account</h1>
+                    <h2>Home  |  Account</h2>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-xl-6 col-sm-6">
                             <div class="title">
-                                <h3>Historico de Operações</h3>
+                                <h3>Operation History</h3>
                             </div>
                         </div>
                         <div class="col-xl-6 col-sm-6">
@@ -31,11 +31,11 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Par</th>
-                                            <th scope="col">Data</th>
-                                            <th scope="col">Montante</th>
+                                            <th scope="col">Pair</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Amount</th>
                                             <th scope="col">Hash</th>
-                                            <th scope="col">Estado</th>
+                                            <th scope="col">State</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -51,8 +51,8 @@
                                             $estado_texto_b = "Confirmed";
 
                                         }else{
-                                            $estado_texto_a = "Esperando";
-                                            $estado_texto_b = "Confirmado";
+                                            $estado_texto_a = "Waiting";
+                                            $estado_texto_b = "Confirmed";
                                         }
                                         
                                         $estado_cor_a = "orange";

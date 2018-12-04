@@ -1,0 +1,4 @@
+BTC
+ETH
+LTC
+TRX

@@ -1,5 +1,43 @@
 <?php 
-class exchange{
+class user{
+    
+    private $user;
+    private $connect;
+    
+    public function __construct(){
+        global $connect;
+        $this->user = isset($_SESSION['username']) ? $_SESSION['username'] : "";
+        $this->connect = $connect;
+    }
+    
+    public function isLoggedin(){
+        
+        if(!empty($this->user)){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    
+    public function getName(){
+        
+        $user = $this->user;
+        $get = $this->connect->query("SELECT * FROM users WHERE email = '$user'");
+        $fetch = $get->fetch_array(MYSQLI_ASSOC);
+        
+        $name = $fetch['username'];
+        
+        echo $name;
+        
+    }
+    
+  
+   
+}
+
+
+class exchange extends user{
     
     private $user;
     private $connect;
@@ -10,7 +48,7 @@ class exchange{
              $this->user = $_SESSION['username']; 
         }
     }
-
+    
 
     public function switchCoins($amount,$address,$from,$to){ // Exchange coins
        
@@ -23,7 +61,7 @@ class exchange{
                 if(isset($_SESSION['en'])){
                     
                 }else{
-                  echo'<script>alert("Ainda tens uma exchange a decorrer, terás de a finalizar primeiro.");</script>';
+                  echo'<script>alert("You still have an exchange on going, finish it first.");</script>';
                 }
                 
                 // Refresh page
@@ -50,11 +88,52 @@ class exchange{
         
     }
     
+    public function allTransactions(){
+        
+        global $connect;
+        $select = $connect->query("SELECT * FROM transactions ORDER by id DESC");
+        
+        while ($fetch = $select->fetch_array(MYSQLI_ASSOC)){
+  
+        	$estado_texto_a = "Waiting";
+        	$estado_texto_b = "Confirmed";
+        	$estado_cor_a = "orange";
+        	$estado_cor_b = "green";
+        	$pair = str_replace("_", "->", $fetch['pair']);
+        	$currency = $arr = explode("->", $pair, 2);
+        	$currency = $arr[0];
+        	$currency = strtoupper($currency);
+        	$from = $arr[0];
+        	$to = $arr[1];
+        	if ($fetch['verified'] == 0){
+        	    
+        		$estado = $estado_texto_a;
+        		$cor = $estado_cor_a;
+        		
+        	}else{
+        		$estado = $estado_texto_b;
+        		$cor = $estado_cor_b;
+        	}
+        
+        	echo 
+        	'
+                <th scope="row">' . strtoupper($arr[0]) . ' Para ' . strtoupper($arr[1]) . '</th>
+                <th>' . $fetch['date'] . '</th>
+                <th>' . $fetch['sendamount'] . ' ' . strtoupper($arr[0]) . '</th>
+                <th scope="row">' . $fetch['hash'] . '</th>
+                <th style="color:' . $cor . ';">' . $estado . '</th>
+            ';
+            
+        }
+        
+    }
+    
     
     
     
 }
 
+$user = new user;
 $exchange = new exchange;
 
 

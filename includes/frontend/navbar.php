@@ -1,9 +1,12 @@
-  <header class="header">
+<?php 
+include("configs/global.php");   
+?>
+<header class="header">
             <div class="container">
                 <div class="row d-flex">
                     <div class="col-xl-3 col-lg-4 col-md-12">
                         <div class="logo">
-                            <a href="/"><?php echo $config['global']['websitename']; ?>Exchange</a>
+                            <a href="/"><?php echo $config['global']['websitename']; ?></a>
                         </div>
                         <div class="menu-button d-block d-xl-none d-lg-block d-md-block d-sm-block">
                             <i class="icofont-navigation-menu"></i>
@@ -16,14 +19,14 @@
                                 <li><a href="/about">About</a></li>
                                 <li><a href="/help">Help</a></li>
 
-                                <?php if(isset($_SESSION['username'])){ echo ' <li><a href="/conta">My account</a></li>'; } ?>
+                                <?php if(user::isLoggedin() == true){ echo ' <li><a href="/account">My account</a></li>'; } ?>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-xl-2 col-lg-2 d-flex align-items-center">
                         <div class="sign-in">
-                            <?php if(isset($_SESSION['username'])){ ?>
+                            <?php if(user::isLoggedin() == true){ ?>
                             
                             <a href="/logout">logout</a>
 

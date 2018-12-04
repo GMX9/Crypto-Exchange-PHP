@@ -18,9 +18,12 @@
                             <div class="exchange-button">
                                 <input type="text" name="montante" placeholder="0">
                                 <select name="from">
-                                    <option value="btc">BTC</option>
-                                    <option value="eth">ETH</option>
-                                    <option value="ltc">LTC</option>
+                                    <?php
+                                    $lines = file('configs/coins.txt');
+                                    foreach($lines as $line) {
+                                        echo '<option value="'.$line.'">'.$line.'</option>';
+                                    }
+                                    ?>
                                 </select>
                                 <div class="icon">
                                     <i class="fas fa-angle-down"></i>
@@ -29,9 +32,12 @@
                             <div class="exchange-button">
                                 <input type="text" style="border:none;" disabled placeholder="Para">
                                 <select name="to">
-                                    <option value="eth">ETH</option>
-                                    <option value="btc">BTC</option>
-                                    <option value="ltc">LTC</option>
+                                    <?php
+                                    $lines = file('configs/coins.txt');
+                                    foreach($lines as $line) {
+                                        echo '<option value="'.$line.'">'.$line.'</option>';
+                                    }
+                                    ?>
                                 </select>
                                 <div class="icon">
                                     <i class="fas fa-angle-down"></i>
@@ -40,7 +46,7 @@
                         </div>
                             
                         <div class="exchange-now">
-                            <button name="submitx" class="exchange-now-button">Exchange</button> 
+                            <button name="exchange" class="exchange-now-button">Exchange</button> 
                         </div>
                       </form>
 
@@ -283,29 +289,18 @@ if(isset($_POST['exchange'])){
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="chart">
-                                <table class="table table-striped">
+                                 <table class="table">
                                     <thead>
                                         <tr>
-                                           <th scope="col">Date</th>
-                                           <th scope="col">Coin</th>
-                                           <th scope="col">Hash</th>
-                                           <th scope="col">Amount</th>
-                                           <th scope="col">Hour</th>
-                                           <th scope="col">Payment</th>
-                                           <th scope="col">Conf.</th>
+                                            <th scope="col">Pair</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col">Hash</th>
+                                            <th scope="col">State</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                           <th scope="row"><i class="fas fa-calendar-alt"></i> 4 de October 2018</th>
-                                           <td><i class="fab fa-bitcoin"></i> Bitcoin</td>
-                                           <td>1Puh8q2SM3N92FwTHXNZq4LwkRpPQ61jy</td>
-                                           <td><i class="far fa-clock"></i> 0.84634 <span>BTC</span></td>
-                                           <td>22:09:58</td>
-                                           <td>1.84634 <span>BTC</span></td>
-                                           <td>1</td>
-                                        </tr>
-                                       
+                                    <?php exchange::allTransactions(); ?>
                                     </tbody>
                                 </table>
                             </div>

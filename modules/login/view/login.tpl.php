@@ -3,8 +3,8 @@
         <div class="page-title-area">
             <div class="container">
                 <div class="page-title">
-                    <h1 class="plus-margin">Entrar</h1>
-                    <h2>Inicio  |  Entrar</h2>
+                    <h1 class="plus-margin">Log in</h1>
+                    <h2>Home  |  Log in</h2>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-xl-10">
                                     <div class="register-title">
-                                        <h2>Entrar Agora</h2>
+                                        <h2>Log in now</h2>
                                     </div>
                                 </div>
                             </div>
@@ -27,18 +27,18 @@
                                 <div class="col-xl-10">
                                     <form method="POST" action="">
                                         <div class="name">
-                                            <h4>Insira o seu email</h4>
-                                            <input type="email" name="email" placeholder="Escreva aqui...">
+                                            <h4>Your email</h4>
+                                            <input type="email" name="email" placeholder="Type here...">
                                             <i class="fas fa-user"></i>
                                         </div>
                                         <div class="password">
-                                            <h4>Insira a sua password</h4>
-                                            <input type="password" name="password" placeholder="Escreva aqui...">
+                                            <h4>Password</h4>
+                                            <input type="password" name="password" placeholder="Type here...">
                                             <i class="fas fa-key"></i>
                                         </div>
                                         <div class="two-buttons">
-                                            <button name="submit">entrar agora</button>
-                                            <button name="reg">registar</button>
+                                            <button name="submit">log in</button>
+                                            <button name="reg">register</button>
                                         </div>
                                     </form>
                                     <?php 
@@ -48,7 +48,7 @@
                                     }
                                     
                                     if(isset($_POST['reg'])){
-                                        echo'<meta http-equiv="refresh" content="0; url=/registar" />';
+                                        echo'<meta http-equiv="refresh" content="0; url=/register" />';
                                     }    
 
                                     ?>

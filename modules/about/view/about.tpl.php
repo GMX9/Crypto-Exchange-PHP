@@ -2,8 +2,8 @@
         <div class="page-title-area">
             <div class="container">
                 <div class="page-title">
-                    <h1 class="plus-margin">Sobre</h1>
-                    <h2>Inicio  | Sobre</h2>
+                    <h1 class="plus-margin">About</h1>
+                    <h2>Index  | About</h2>
                 </div>
             </div>
         </div>
@@ -19,8 +19,9 @@
                     </div>
                     <div class="col-xl-6 col-md-12 col-sm-12 d-flex align-items-center">
                         <div class="part-content">
-                            <h2 style="text-transform: none;">Tudo o que precisas saber sobre a PTExchange</h2>
-                            <p>As nossas trocas de criptomoeda são feitas utilizando diferentes API de diferentes mercados de forma a obter o melhor rate possivel, todas as trocas são efetuadas quase sempre instantaneamente, tirando algumas transações que poderão levar até 1-5horas.</p>
+                            <h2 style="text-transform: none;">All you need to know about PTExchange</h2>
+                            <p>
+Our exchanges are made using different APIs from different markets in order to obtain the best possible rate, all exchanges are made almost always instantly, taking some transactions that may take up to 1 - 5 hours.</p>
                         </div>
                     </div>
                 </div>
@@ -33,7 +34,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="area-title">
-                            <h2>Os nossos serviços</h2>
+                            <h2>Our services</h2>
                         </div>
                     </div>
                 </div>
@@ -47,8 +48,8 @@
                                 <i class="flaticon-bitcoin-2"></i>
                             </div>
                             <div class="part-text">
-                                <h3>Diferentes Criptomoedas</h3>
-                                <p>Providenciamos serviços para diferente tipos de moedas.</p>
+                                <h3>Different cryptocurrency</h3>
+                                <p>We provide services to different coins.</p>
                             </div>
                         </div>
                     </div>
@@ -60,8 +61,8 @@
                                 <i class="flaticon-blockchain"></i>
                             </div>
                             <div class="part-text">
-                                <h3>Trocas instantaneas</h3>
-                                <p>Providenciamos trocas de criptomoeda instantaneas.</p>
+                                <h3>Instant Exchanges</h3>
+                                <p>We provide almost instant exchanges on our platform.</p>
                             </div>
                         </div>
                     </div>
@@ -74,8 +75,8 @@
                                 <i class="flaticon-bitcoin-1"></i>
                             </div>
                             <div class="part-text">
-                                <h3>Seguro</h3>
-                                <p>Nenhum capital esta sobre a nossa custodia , todas as trocas são efetuadas sem interferência humana.</p>
+                                <h3>Secure</h3>
+                                <p>No money is under our custody, so it is safe from human interaction.</p>
                             </div>
                         </div>
                     </div>
@@ -95,7 +96,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="area-title">
-                            <h2>Como funciona</h2>
+                            <h2>How it works</h2>
                         </div>
                     </div>
                 </div>
@@ -112,7 +113,7 @@
                                         <i class="fas fa-wallet"></i>
                                     </div>
                                     <div class="part-text">
-                                        <h3>Carteira<br/>1</h3>
+                                        <h3>Wallet<br/>1</h3>
                                     </div>
                                 </div>
 
@@ -124,7 +125,7 @@
 
                                 <div class="rexchange">
                                     <h3>PTExchange</h3>
-                                    <h4>Escolhemos<br/> o melhor rate</h4>
+                                    <h4>Choose<br/> best rate</h4>
                                 </div>
 
                                 <div class="currency">
@@ -134,9 +135,9 @@
                                 </div>
 
                                 <div class="exchange">
-                                    <h3>TROCA</h3>
+                                    <h3>Exchange</h3>
                                     <ul>
-                                        <li>Melhor rate:</li>
+                                        <li>Best rate:</li>
                                         <li>15 LTC = 0.001 BTC</li>
                                     </ul>
                                 </div>
