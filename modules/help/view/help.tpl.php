@@ -1,3 +1,4 @@
+<?php require('configs/global.php'); ?>
 
         <div class="page-title-area">
             <div class="container">
