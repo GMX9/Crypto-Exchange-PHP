@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^/?([a-zA-Z_]+)$ index.php?z=$1 [L,QSA]
+php_flag display_errors 1
