@@ -1,4 +1,5 @@
 <?php 
+global $user;
 include("configs/global.php");   
 ?>
 <header class="header">
@@ -19,14 +20,14 @@ include("configs/global.php");
                                 <li><a href="/about">About</a></li>
                                 <li><a href="/help">Help</a></li>
 
-                                <?php if(user::isLoggedin() == true){ echo ' <li><a href="/account">My account</a></li>'; } ?>
+                                <?php if($user->isLoggedin() == true){ echo ' <li><a href="/account">My account</a></li>'; } ?>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-xl-2 col-lg-2 d-flex align-items-center">
                         <div class="sign-in">
-                            <?php if(user::isLoggedin() == true){ ?>
+                            <?php if($user->isLoggedin() == true){ ?>
                             
                             <a href="/logout">logout</a>
 

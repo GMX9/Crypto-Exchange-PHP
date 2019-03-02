@@ -3,10 +3,13 @@ class user{
     
     private $user;
     private $connect;
+    private $user_session;
     
-    public function __construct(){
+    public function __construct($session){
         global $connect;
-        $this->user = isset($_SESSION['username']) ? $_SESSION['username'] : "";
+
+        $this->user = $session;
+
         $this->connect = $connect;
     }
     
@@ -69,9 +72,11 @@ class exchange extends user{
     
             }else{
                 
-                $pair = $from."_".$to;
+                $pair = "".$from."_".$to."";
+                $pair = trim($pair);
+
                 
-                $_SESSION['montante'] = $montante;
+                $_SESSION['montante'] = $amount;
                 $_SESSION['address'] = $address;
                 $_SESSION['pair'] = $pair;
                 
@@ -133,7 +138,6 @@ class exchange extends user{
     
 }
 
-$user = new user;
 $exchange = new exchange;
 
 

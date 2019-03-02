@@ -57,8 +57,8 @@ if(isset($_POST['exchange'])){
     
     $montante = htmlentities($connect->real_escape_string($_POST['montante']));
     $address = htmlentities($connect->real_escape_string($_POST['address']));
-    $from = htmlentities($connect->real_escape_string($_POST['from']));
-    $to = htmlentities($connect->real_escape_string($_POST['to']));
+    $from = trim($_POST['from']);
+    $to = trim($_POST['to']);
     ###########################################################################
     
     $this->exchange->switchCoins($montante,$address,$from,$to);
@@ -214,6 +214,11 @@ if(isset($_POST['exchange'])){
             </div>
         </div>
         
+        <?php
+        global $user;
+        if($user->isLoggedin() == false){
+        ?>    
+        
         <div class="signup-area">
             <div class="container">
                 <div class="row justify-content-center">
@@ -262,7 +267,7 @@ if(isset($_POST['exchange'])){
                 </div>
             </div>
         </div>
-
+<?php } ?>
 
      <div class="payout-area">
             <div class="container">

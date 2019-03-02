@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 $client = new GuzzleHttp\Client();
 global $connect;
 ########################################################
-
+include('configs/global.php');
 ########################################################
 
 
@@ -30,34 +30,38 @@ $tid = $get['transaction_id'];
 }else{
     
 $address = $_SESSION['address'];
-$pair = $_SESSION['pair'];
+$pair = str_replace("\r\n","",$_SESSION['pair']);
 $montante = $_SESSION['montante'];
 $currency = $arr = explode("_", $pair, 2);
 $currency = $arr[0];
 $currency = strtoupper($currency);
 
-$from = $arr[0];
-$to = $arr[1];
-    
-require_once("configs/global.php");   
 
+$from = trim(strip_tags($arr[0]));
+$to = trim(strip_tags($arr[1]));
+
+print_r(trim($pair));
+$from = trim(preg_replace('/\s\s+/', ' ', $from));
+
+$to = trim(preg_replace('/\s\s+/', ' ', $to));
+ 
 
 $client = new GuzzleHttp\Client();
 $data   = [
-    "from"    => $from,
-    "to"      => $to,
-    "address" => $address,
+    "from"    => strip_tags(trim($from)),
+    "to"      => strip_tags(trim($to)),
     "amount"  => $montante,
-    "refundAddress" => "1GRXa73viip2EccKocY74MHh2R5mhbvATB"
+    "address" => $address
 ];
 
-$result = $client->post('https://changenow.io/api/v1/transactions/'.$tid.$config['changenow']['api'], ['json' => $data]);
+print_r($data);
+
+$result = $client->post('https://changenow.io/api/v1/transactions/'.$config['changenow']['api'], ['json' => $data]);
 
 
 /*print "<pre>";
 print_r( $result->getBody()->getContents() );
 print "</pre>";*/
-
 
 $bodyb = $result->getBody();
 $varx = json_decode((string) $bodyb, true);
@@ -95,7 +99,7 @@ if($check->num_rows){
 ########################################################
 require_once("configs/global.php");   
 
-$data = json_decode(file_get_contents('https://changenow.io/api/v1/transactions/'.$tid.$config['changenow']['api']), true);
+$data = json_decode(file_get_contents('https://changenow.io/api/v1/transactions/'.$tid.'/'.$config['changenow']['api']), true);
 //print_r($data);
 //echo $data["status"];
 
@@ -233,8 +237,8 @@ if($verified == "finished"){
                                             <h3>The total amount should be sent in 1 transaction only</h3>
                                         </div>
 
-                                        <div class="part-input">
-                                            <input type="text" placeholder="<?php echo $deposit; ?>" readonly>
+                                        <div class="part-input" style="width: 100%; max-width: 100%;">
+                                            <input type="text" style="width: 100%;" placeholder="<?php echo $deposit; ?>" readonly>
                                             <button>
                                                 <i class="icofont-copy-invert"></i>
                                             </button>
