@@ -9,7 +9,7 @@ Our website : https://cryptoexchange-software.us/
 
 ### Features
  - Add new coins
- - Get money from setting changenow.io API and get 90% transaction fees.
+ - Receive money from setting up an account at changenow.io API and profit 90% from your exchange transaction fees.
  - Show recent transactions
  - Custom Login/Register system for users
  - Transaction History
