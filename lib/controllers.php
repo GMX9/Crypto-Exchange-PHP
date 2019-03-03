@@ -28,31 +28,36 @@ public function __construct(){
 public function pageIndex($param){
     $conta = count($_GET);
     
-    if(isset($_GET['page']) && $conta == 1){
-        
-            $name = $_GET[$param];
-            $dirs = scandir("modules/");
-            $found = false;
-            foreach ($dirs as $dir){
-                if($name == $dir && is_dir("modules/$dir")){
-                    $found = true;
-                    break;
-                }
-            }
-            if($found && file_exists("modules/$name/controller/$name.php")){
-                require_once("modules/$name/controller/$name.php");
-                $module->index();
-            }else{
-                require_once("modules/index/controller/index.php");
-                $module->index();
-            } 
-        	
+    if(file_exists("install.php")){
+        include("install.php");
     }else{
-
-	    require_once('modules/index/controller/index.php');
-	    $module->index();
-
-    }
+    
+        if(isset($_GET['page']) && $conta == 1){
+            
+                $name = $_GET[$param];
+                $dirs = scandir("modules/");
+                $found = false;
+                foreach ($dirs as $dir){
+                    if($name == $dir && is_dir("modules/$dir")){
+                        $found = true;
+                        break;
+                    }
+                }
+                if($found && file_exists("modules/$name/controller/$name.php")){
+                    require_once("modules/$name/controller/$name.php");
+                    $module->index();
+                }else{
+                    require_once("modules/index/controller/index.php");
+                    $module->index();
+                } 
+            	
+        }else{
+    
+    	    require_once('modules/index/controller/index.php');
+    	    $module->index();
+    
+        }
+    }    
 
 }
 
