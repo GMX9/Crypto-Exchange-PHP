@@ -1,4 +1,4 @@
-# Free Crypto Exchange PHP v.1.3.1
+# Free Crypto Exchange PHP v.1.3.1 [![Exclusive]
 The first free Open-Source Crypto Exchange for all the community.
 
 This script is completly tested and exchanges the coins without any trouble using the changenow.io api, and using the functions it's very easy to integrate it with a custom template.
