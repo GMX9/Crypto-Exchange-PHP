@@ -29,6 +29,12 @@ Changenow.io is the best partner to have as an exchange api provider since it pa
 - Opening your website link will prompt an installer, follow the steps and it will install automaticly.
 - Start your business !
 
+### Requirements
+
+- PHP 7.0 or Superior
+- MySQL DB
+- Linux Hosting (If it's windows hosting you ill have to convert the .htaccess file)
+
 
 ### How to add new coins
 
