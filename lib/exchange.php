@@ -1,4 +1,6 @@
 <?php 
+
+// User Default Functions
 class user{
     
     private $user;
@@ -7,12 +9,11 @@ class user{
     
     public function __construct($session){
         global $connect;
-
-        $this->user = $session;
-
+        $this->user = $session
         $this->connect = $connect;
     }
     
+    // Verify if user is logged in
     public function isLoggedin(){
         
         if(!empty($this->user)){
@@ -23,14 +24,14 @@ class user{
         
     }
     
+    // Get the user name
     public function getName(){
         
         $user = $this->user;
         $get = $this->connect->query("SELECT * FROM users WHERE email = '$user'");
         $fetch = $get->fetch_array(MYSQLI_ASSOC);
-        
-        $name = $fetch['username'];
-        
+        $name = strip_tags($fetch['username']);
+   
         echo $name;
         
     }
@@ -39,7 +40,7 @@ class user{
    
 }
 
-
+// Exchange Core
 class exchange extends user{
     
     private $user;
@@ -52,29 +53,23 @@ class exchange extends user{
         }
     }
     
-
+    // Exchange function
     public function switchCoins($amount,$address,$from,$to){ // Exchange coins
        
         global $connect;
         if(isset($_SESSION['username'])){   
              
             $select = $connect->query("SELECT * FROM transactions WHERE user = '$this->user' AND verified = 0");
-            if($select->num_rows){
-                
-                if(isset($_SESSION['en'])){
-                    
-                }else{
-                  echo'<script>alert("You still have an exchange on going, finish it first.");</script>';
-                }
-                
-                // Refresh page
+            if($select->num_rows){ 
+
+                echo'<script>alert("You still have an exchange on going, finish it first.");</script>';
+                // Redirect to payment page
                 echo '<meta http-equiv="refresh" content="0; url=/completar" />';
     
             }else{
                 
                 $pair = "".$from."_".$to."";
                 $pair = trim($pair);
-
                 
                 $_SESSION['montante'] = $amount;
                 $_SESSION['address'] = $address;
@@ -87,12 +82,12 @@ class exchange extends user{
         }else{
             
             echo'<meta http-equiv="refresh" content="0; url=/login" />';
-        	    
-        	    
+        	        
         } 
         
     }
     
+    // Display all transactions
     public function allTransactions(){
         
         global $connect;
