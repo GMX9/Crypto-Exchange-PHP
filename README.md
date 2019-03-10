@@ -60,3 +60,7 @@ Changenow.io is the best partner to have as an exchange api provider since it pa
  ### No resell rights
  
  You do not have the right's to resell this or claim as yours, all rights are exclusive to me, you can reuse it and reedit but not resell !
+ 
+  ### Crypto News API
+  Check out our recent projects, crypto news api:
+  https://cryptoapi.news
