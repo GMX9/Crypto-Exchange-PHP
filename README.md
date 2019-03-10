@@ -53,7 +53,7 @@ Changenow.io is the best partner to have as an exchange api provider since it pa
  - Contribute to the codebase.
  - Promote.
  
- ### Upcomming features
+ ### Upcoming features
  
  - Custom Backoffice for fully customizing the website
  
