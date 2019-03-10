@@ -153,75 +153,6 @@ public function newInput($label,$name,$value){
     
 }
 
-
-
-function createPage($application,$head) {
-	# Gerar um nome diferente para os inputs
-
-	$name_gen = array("a","b","c");
-    $this->formOpen($head);
-	foreach($application as $key=>$value){
-      
-   
-    
-
-    //$input_count = $counts;
-    if($key == "titulo_en"){	  
-    
-     $t = $value[0];
-     
-     echo $t;
-     
-    }
-    
-    if($key == "table"){
-        $table = $value;
-    }
-	
-    echo $key[0];
-
-	  if($key == "titulo_pt"){	  
-	      
-	      $i = 0;
-	      $count = $value[0];
-	       for ($i = 0; $i < $count; $i++) {
-	           if($i > $count){
-	               break;
-	           }
-	           # GERAR NOME
-	           $input_name = $name_gen[$i];
-	           $inputname = "titulo_".$input_name."_pt";
-	           $label = strtoupper($inputname);
-	           $label = str_replace("_","&nbsp;",$label);
-	           
-		       $this->newInput($label,$inputname,"");
-		       
-		      
-
-	      }
-	  }       
-
-
-    
-	}
-	
-	$this->formClose();
-	
-	
-    // $this->formOpen();
-   
-
-    /*if($application['titulo_en'] == true){
-	   $this->input("",$inputname);   
-    }*/
-
-
-    
-
-
-    // $this->formClose() com botao;
-}
-
 protected function texto($table,$coluna){
     
     global $connect;
@@ -277,10 +208,5 @@ public function frontend_closeHeader(){
 
 $controllers = new controllers;
 $exchange = new exchange;
-
-
-
-
-
 
 ?>
