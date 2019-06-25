@@ -7,7 +7,7 @@ This script is completly tested and exchanges the coins without any trouble usin
 Changenow.io is the best partner to have as an exchange api provider since it pays you 90% of every transaction fee.
 
 #
-<img src="https://cryptoexchange-software.us/images/logob.png" height="190px" align="left" /><br>
+<img src="http://cryptoexchange-software.us/images/logob.png" height="190px" align="left" /><br>
 # Our website: 
 > https://cryptoexchange-software.us/
 #
