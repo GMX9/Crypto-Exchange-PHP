@@ -1,4 +1,5 @@
 BTC
 ETH
 LTC
+SUM
 TRX
