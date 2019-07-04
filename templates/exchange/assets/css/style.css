@@ -323,6 +323,11 @@ p {
     -moz-appearance: none;
     cursor: pointer;
 }
+
+.banner .banner-content .exchange-button select option {
+    color: #000;
+}
+
 .exchange-now {
     margin-bottom: 160px;
 }
