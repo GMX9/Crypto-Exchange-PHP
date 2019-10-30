@@ -1,0 +1,8 @@
+[27-May-2019 20:51:16 America/New_York] PHP Warning:  file(configs/coins.txt): failed to open stream: No such file or directory in /home/gmtemhic/demo.cryptoexchange-software.us/modules/index/view/index.tpl.php on line 22
+[27-May-2019 20:51:16 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/gmtemhic/demo.cryptoexchange-software.us/modules/index/view/index.tpl.php on line 23
+[27-May-2019 20:51:16 America/New_York] PHP Warning:  file(configs/coins.txt): failed to open stream: No such file or directory in /home/gmtemhic/demo.cryptoexchange-software.us/modules/index/view/index.tpl.php on line 36
+[27-May-2019 20:51:16 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/gmtemhic/demo.cryptoexchange-software.us/modules/index/view/index.tpl.php on line 37
+[27-May-2019 20:51:16 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function isLoggedin() on null in /home/gmtemhic/demo.cryptoexchange-software.us/modules/index/view/index.tpl.php:219
+Stack trace:
+#0 {main}
+  thrown in /home/gmtemhic/demo.cryptoexchange-software.us/modules/index/view/index.tpl.php on line 219

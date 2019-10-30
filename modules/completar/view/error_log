@@ -1,0 +1,2 @@
+[27-May-2019 20:51:11 America/New_York] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/gmtemhic/demo.cryptoexchange-software.us/modules/completar/view/completar.tpl.php on line 2
+[27-May-2019 20:51:11 America/New_York] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/gmtemhic/demo.cryptoexchange-software.us/modules/completar/view/completar.tpl.php on line 2

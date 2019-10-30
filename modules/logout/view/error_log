@@ -1,0 +1,1 @@
+[27-May-2019 20:51:19 America/New_York] PHP Notice:  Undefined variable: _SESSION in /home/gmtemhic/demo.cryptoexchange-software.us/modules/logout/view/logout.tpl.php on line 2
