@@ -1,0 +1,5 @@
+[27-May-2019 20:51:09 America/New_York] PHP Notice:  Undefined variable: _SESSION in /home/gmtemhic/demo.cryptoexchange-software.us/modules/account/view/account.tpl.php on line 45
+[27-May-2019 20:51:09 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/gmtemhic/demo.cryptoexchange-software.us/modules/account/view/account.tpl.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/gmtemhic/demo.cryptoexchange-software.us/modules/account/view/account.tpl.php on line 46
