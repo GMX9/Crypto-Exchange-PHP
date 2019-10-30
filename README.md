@@ -13,6 +13,24 @@ Changenow.io is the best partner to have as an exchange api provider since it pa
 #
 #
 
+
+# Upcoming Version
+
+New update is coming in November-December 2019, new system fully upgraded.
+
+To expect in this release:
+- New clean theme.
+- Clear organization in overall construction OOP.
+- Implementation of a template system for modules.
+- Multilingual support.
+
+Future to do:
+- Improved Dashboard with Back-Office-
+- KYC support.
+- Ticket System.
+
+
+
 ### Features
  - Add new coins.
  - Receive money from setting up an account at changenow.io API and profit 90% from your exchange transaction fees..
