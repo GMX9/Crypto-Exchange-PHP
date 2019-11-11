@@ -148,6 +148,131 @@ class exchange extends user{
         
     }
     
+    public function exchangeAPI($config){
+        global $connect;
+        global $_SESSION;
+        
+        $user = $this->user;
+        
+        // Let's verify the transaction
+        $select = $connect->query("SELECT * FROM transactions WHERE user = '$user' AND verified = 0");
+        if ($select->num_rows){
+    
+            $get = $select->fetch_array(MYSQLI_ASSOC);
+    
+            $deposit = trim($get['payinaddress']);
+            $pair = $_SESSION['pair'];
+            $montante = $_SESSION['montante'];
+            $currency = $arr = explode("_", $pair, 2);
+            $currency = $arr[0];
+            $currency = strtoupper($currency);
+            $from = $arr[0];
+            $to = $arr[1];
+            $tid = $get['transaction_id'];
+    
+        }else{
+    
+            $address = trim($_SESSION['address']);
+            $pair = str_replace("\r\n", "", $_SESSION['pair']);
+            $montante = $_SESSION['montante'];
+            $currency = $arr = explode("_", $pair, 2);
+            $currency = $arr[0];
+            $currency = strtoupper($currency);
+    
+            $from = trim(strip_tags($arr[0]));
+            $to = trim(strip_tags($arr[1]));
+    
+            print_r(trim($pair));
+            $from = trim(preg_replace('/\s\s+/', ' ', $from));
+    
+            $to = trim(preg_replace('/\s\s+/', ' ', $to));
+    
+            $client = new GuzzleHttp\Client();
+            $data = ["from" => strip_tags(trim($from)) , "to" => strip_tags(trim($to)) , "amount" => $montante, "address" => $address];
+    
+            print_r($data);
+    
+            $result = $client->post('https://changenow.io/api/v1/transactions/' . $config['changenow']['api'], ['json' => $data]);
+    
+            /*print "<pre>";
+            print_r( $result->getBody()->getContents() );
+            print "</pre>";*/
+    
+            $bodyb = $result->getBody();
+            $varx = json_decode((string)$bodyb, true);
+    
+            $deposit = $varx['payinAddress'];
+            $payout = $varx['payoutAddress'];
+            $tid = $varx['id'];
+    
+            ########################################################
+            # INSERIR NA DB OS DADOS
+            ########################################################
+            global $connect;
+            $data = date("Y/m/d");
+    
+            // Check if transaction already listed
+            $check = $connect->query("SELECT * FROM transactions WHERE transaction_id = '$tid'");
+            if ($check->num_rows){
+                // Do nothing
+                
+            }else{
+                if ($insert = $connect->prepare("INSERT INTO transactions(user,date,transaction_id,payinaddress,payoutaddress,pair) VALUES(?,?,?,?,?,?)")){
+                    $insert->bind_param("ssssss", $user, $data, $tid, $deposit, $payout, $pair);
+                    $insert->execute();
+                }else{
+                    echo $connect->error;
+                }
+            }
+    
+        } 
+        
+        // Here it terminates | Aqui finaliza a condição
+        
+        
+        ########################################################
+        # VERIFY TRANSACTION | VERIFICAR TRANSAÇÃO
+        ########################################################
+        require_once ("configs/global.php");
+    
+        $data = json_decode(file_get_contents('https://changenow.io/api/v1/transactions/' . $tid . '/' . $config['changenow']['api']) , true);
+        //print_r($data);
+        //echo $data["status"];
+        // Dados Gerados
+        $estado = $data["status"];
+    
+        $montante_esperado = $data['expectedReceiveAmount'];
+        $amount_to_send = $data['expectedSendAmount'];
+    
+        if (isset($data['hash'])){
+            $hash = $data['hash'];
+        }else{
+    
+        }
+        $verified = $estado;
+    
+        if ($verified == "finished"){
+    
+            $status = 1;
+            if ($update = $connect->prepare("UPDATE transactions SET sendamount = ?,receiveamount = ?,hash = ?,verified = ? WHERE transaction_id = ?")){
+                $update->bind_param("sssii", $montante, $receiveamount, $hash, $status, $tid);
+                $update->execute();
+            }else{
+                echo $connect->error;
+            }
+    
+            unset($_SESSION['pair']);
+            unset($_SESSION['address']);
+            unset($_SESSION['montante']);
+    
+            echo '<meta http-equiv="refresh" content="0; url=/conta" />';
+    
+        }
+        
+        return array($tid, $montante_esperado, $to, $amount_to_send, $currency, $deposit);
+        
+    }
+    
     
     
     
