@@ -1,15 +1,15 @@
 #
+#
+<img src="http://cryptoexchange-software.us/images/logob.png" height="190px" align="left" /><br>
 # CEFS - Free Crypto Exchange PHP v.1.3.1 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 > The first free Open-Source Crypto Exchange for all the community.
+
+# Our website: 
+> https://cryptoexchange-software.us/
 
 This script is completly tested and exchanges the coins without any trouble using the changenow.io api, and using the functions it's very easy to integrate it with a custom template.
 
 Changenow.io is the best partner to have as an exchange api provider since it pays you 90% of every transaction fee.
-
-#
-<img src="http://cryptoexchange-software.us/images/logob.png" height="190px" align="left" /><br>
-# Our website: 
-> https://cryptoexchange-software.us/
 #
 #
 
