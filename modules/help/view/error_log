@@ -1,2 +1,0 @@
-[27-May-2019 20:51:14 America/New_York] PHP Warning:  require(configs/global.php): failed to open stream: No such file or directory in /home/gmtemhic/demo.cryptoexchange-software.us/modules/help/view/help.tpl.php on line 1
-[27-May-2019 20:51:14 America/New_York] PHP Fatal error:  require(): Failed opening required 'configs/global.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/gmtemhic/demo.cryptoexchange-software.us/modules/help/view/help.tpl.php on line 1
