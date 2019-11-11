@@ -38,6 +38,7 @@ Future to do:
  - Custom Login/Register system for users.
  - Transaction History.
  - Exchange Crypto.
+ - Fully Functional Contact Form
  - Automatic Installer.
 
 
@@ -45,6 +46,7 @@ Future to do:
 
 - Unzip the project on your hosting root.
 - Opening your website link will prompt an installer, follow the steps and it will install automaticly.
+- Configure the smtp.php located at "configs/smtp.php" -> With your SMTP server details.
 - Start your business !
 
 ### Requirements
