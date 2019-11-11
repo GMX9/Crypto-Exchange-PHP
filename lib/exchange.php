@@ -9,7 +9,7 @@ class user{
     
     public function __construct($session){
         global $connect;
-        $this->user = $session
+        $this->user = $session;
         $this->connect = $connect;
     }
     
