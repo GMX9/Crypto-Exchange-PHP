@@ -21,15 +21,29 @@
                             <p><span><i class="fas fa-clock"></i></span><?php echo $config['contacts']['hours']; ?><br/></p>
                         </div>
                     </div>
-                    <div class="col-xl-7 d-flex align-items-center shadows col-lg-6">
+                    <div class="col-xl-7 d-flex align-items-center shadows col-lg-6" style="padding: 36px;">
                         <div class="form-bar">
                             <h3>What goes in your mind <br/>Tell us here</h3>
-                            <form>
-                                <input type="text" placeholder="Your name">
-                                <input type="email" placeholder="Your email">
-                                <textarea placeholder="Your message"></textarea>
-                                <button>send</button>
+                            <form method="POST">
+                                <input type="text" name="name" placeholder="Your name">
+                                <input type="email" name="email" placeholder="Your email">
+                                <textarea name="message" placeholder="Your message"></textarea>
+                                <button type="submit" name="send">send</button>
                             </form>
+                            <?php 
+                            if(isset($_POST['send'])){
+                                
+                                global $exchange;
+                                
+                                $name = $_POST['name'];
+                                $email = $_POST['email'];
+                                $message = $_POST['message'];
+                                
+                                $exchange->sendContact($name,$email,$message);
+                                
+                                
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
