@@ -116,12 +116,14 @@ class exchange extends user{
         	}
         
         	echo 
-        	'
+        	'   
+        	<tr>
                 <th scope="row">' . strtoupper($arr[0]) . ' Para ' . strtoupper($arr[1]) . '</th>
                 <th>' . $fetch['date'] . '</th>
                 <th>' . $fetch['sendamount'] . ' ' . strtoupper($arr[0]) . '</th>
                 <th scope="row">' . $fetch['hash'] . '</th>
                 <th style="color:' . $cor . ';">' . $estado . '</th>
+            </tr>
             ';
             
         }
