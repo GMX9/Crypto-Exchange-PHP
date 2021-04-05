@@ -95,7 +95,7 @@ $filea = "
 ##################################################
 \$config['database']['host'] = '".$_POST['hostname']."';
 \$config['database']['user'] = '".$_POST['user']."';
-\$config['database']['pass'] = '".$_POST['pass']."';
+\$config['database']['pass'] = '".$_POST['password']."'; 
 \$config['database']['db'] = '".$_POST['db']."';
 ##################################################
 ?>
@@ -116,7 +116,7 @@ $filec = "
 ##################################################
 
 \$config['contacts']['location'] = 'City, Country HERE'; // Your Company/Website Location
-\$config['contacts']['email'] = 'City, Country HERE'; // Your Company/Website support email
+\$config['contacts']['email'] = 'E-mail@Website.ltd'; // Your Company/Website support email
 \$config['contacts']['hours'] = '09:00 - 17:00'; // Support Hours 
 
 ##################################################
